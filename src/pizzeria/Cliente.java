@@ -20,6 +20,13 @@ public class Cliente {
     }
     
     public boolean addPedido(Pedido pedido){
-        
+      if (pedidos.contains(pedido)){
+          System.out.println("El pedido ya existe");
+          return false;
+
+      }else{
+          pedidos.add(pedido);
+          return true;
+      }
     }
 }
