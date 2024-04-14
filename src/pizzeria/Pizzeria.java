@@ -15,6 +15,15 @@ public class Pizzeria {
     private List<Cliente> clientes;
     private List<Item> items;
     private List<Pedido> pedidos;
+
+    public Pizzeria(String nombre, List<Cliente> clientes, List<Item> items, List<Pedido> pedidos) {
+        this.nombre = nombre;
+        this.clientes = clientes;
+        this.items = items;
+        this.pedidos = pedidos;
+    }
+    
+    
     
     public boolean addCliente(Cliente cliente){
         

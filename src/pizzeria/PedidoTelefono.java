@@ -4,10 +4,19 @@
  */
 package pizzeria;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author decera
  */
-public class PedidoTelefono {
-    
+public class PedidoTelefono extends Pedido {
+   protected String telefono;
+
+    public PedidoTelefono(String telefono, Cliente cliente, ArrayList<Item> items) {
+        super(cliente, items);
+        this.telefono = telefono;
+    }
+   
+   
 }

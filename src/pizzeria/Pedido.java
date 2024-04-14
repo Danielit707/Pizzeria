@@ -4,10 +4,20 @@
  */
 package pizzeria;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author decera
  */
-public class Pedido {
+public abstract class Pedido {
+    protected Cliente cliente;
+    protected ArrayList<Item> items;
+
+    public Pedido(Cliente cliente, ArrayList<Item> items) {
+        this.cliente = cliente;
+        this.items = items;
+    }
+    
     
 }
