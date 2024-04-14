@@ -4,7 +4,7 @@
  */
 package pizzeria;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -12,11 +12,11 @@ import java.util.List;
  */
 public class Pizzeria {
     private String nombre;
-    private List<Cliente> clientes;
-    private List<Item> items;
-    private List<Pedido> pedidos;
+    private ArrayList<Cliente> clientes;
+    private ArrayList<Item> items;
+    private ArrayList<Pedido> pedidos;
 
-    public Pizzeria(String nombre, List<Cliente> clientes, List<Item> items, List<Pedido> pedidos) {
+    public Pizzeria(String nombre, ArrayList<Cliente> clientes, ArrayList<Item> items, ArrayList<Pedido> pedidos) {
         this.nombre = nombre;
         this.clientes = clientes;
         this.items = items;
@@ -26,23 +26,41 @@ public class Pizzeria {
     
     
     public boolean addCliente(Cliente cliente){
-        
+        if(clientes.contains(cliente)){
+            System.out.println("el cliente ya extiste");
+            return false;
+        }else{
+            clientes.add(cliente);
+            return true;
+        }
     }
     
     public boolean addItem (Item item){
-        
+         if(items.contains(item)){
+            System.out.println("el item ya extiste");
+            return false;
+        }else{
+            items.add(item);
+            return true;
+        }
     }
     
     public boolean addPedido (Pedido pedido){
-        
+         if(pedidos.contains(pedido)){
+            System.out.println("el pedido ya extiste");
+            return false;
+        }else{
+            pedidos.add(pedido);
+            return true;
+        }
     }
     
     public Cliente getCliente (int index){
-        
+        return clientes.get(index);
     }
     
-    public item getItem (int index){
-        
+    public Item getItem (int index){
+        return items.get(index);
     }
     
     public int calcProdMasVendidoCliente(int numCliente){
